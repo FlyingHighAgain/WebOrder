@@ -3,8 +3,8 @@ app.controller("ConfirmOrderCtrl", function($scope){
 
   $scope.items = 
   [
-    {code: "0110301", name: "協和 黒糖パウダー 20KG", price:"13300", image:"", description:"", suryo:"1"},
-    {code: "0111701", name: "福谷 粉糖 2KG", price:"780", image:"", description:"入り数:10", suryo:"2"},
+    {code: "0110301", name: "協和 黒糖パウダー 20KG", price:"30000", image:"", description:"", suryo:"1"},
+    {code: "0111701", name: "福谷 粉糖 2KG", price:"1500", image:"", description:"入り数:10", suryo:"2"},
   ];
 
   $scope.deliverydates = [
