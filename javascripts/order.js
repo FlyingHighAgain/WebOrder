@@ -3,9 +3,9 @@ app.controller("OrderCtrl", function($scope){
 
   $scope.items = 
   [
-    {code: "0110301", name: "協和 黒糖パウダー 20KG", price:"13300", image:"", description:""},
-    {code: "0111701", name: "福谷 粉糖 2KG", price:"780", image:"", description:"入り数:10"},
-    {code: "0120720", name: "有友 粉糖 3KG", price:"975", image:"", description:"入り数:5"},
+    {code: "0110301", name: "協和 黒糖パウダー 20KG", price:"50000", image:"", description:""},
+    {code: "0111701", name: "福谷 粉糖 2KG", price:"1200", image:"", description:"入り数:10"},
+    {code: "0120720", name: "有友 粉糖 3KG", price:"2000", image:"", description:"入り数:5"},
   ];
 
   $scope.quantities = [
