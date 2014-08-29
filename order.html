@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>○○商事Webストア</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+
+</head>
+
+<!-- navbarの下にコンテンツが隠れるため余白を設定  -->
+<body style="padding-top:60px;">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+<script src="javascripts/order.js"></script>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><strong>○○商事Webストア</strong></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> 設定 </a></li>
+                <li><a href="login.html"><i class="glyphicon glyphicon-user"></i> ログオフ </a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container" ng-app="OrderApp" ng-controller="OrderCtrl">
+
+    <div class="row" style="padding-bottom:10px">
+        <div class="col-xs-12 text-right bg-primary">ようこそ、　システムリサーチ 堀田 さま</div>
+    </div>
+
+    <div class="row" style="padding-bottom:10px">
+        <div class="col-xs-12 bg-warning">本日分の注文受付は10:00までです。</div>
+    </div>
+
+    <div class="row">
+        <div class="btn-group pull-right">
+            <a href="searchitem.html" class="btn btn-info"> <i class="glyphicon glyphicon-search"></i> 商品検索</a>
+            <a href="orderhistory.html" class="btn btn-primary"> <i class="glyphicon glyphicon-book"></i> ご注文履歴</a>
+            <a href="confirmorder.html" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> カート(2)</a>
+        </div>
+    </div>
+
+    <div class="row" style="border-bottom: 1px solid#aaa; padding-top:10px;">
+        <div class="col-xs-12">
+            <h4><strong>リピート商品</strong></h4>
+        </div>
+    </div>
+
+    <div ng-repeat="item in items" class="row" style="border-bottom: 1px solid#aaa; padding-top:10px;padding-bottom:10px;">
+        <!--
+        <div class="col-xs-4">
+            <img ng-src="{{item.image}}" class="img-thumbnail" style="max-height:200px">
+        </div>
+        -->
+        <div class="col-xs-12" style="padding-bottom:5px">
+            <span style="font-size:85%">{{item.code}}</span><br>
+            <span style="font-size:120%"><strong>{{item.name}}</strong></span> <br> <span class="text-danger"><strong>{{item.price | number:0}}円</strong></span><br>
+            <span style="font-size:85%">{{item.description}}</span>
+        </div>
+
+        <!--
+        <div class="col-xs-8 pull-right">
+            <div class="col-xs-4">
+                <label class="control-label" for="suryo">数量</label>
+            </div>
+            <div class="col-xs-7 pull-right">
+                <select id="suryo" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+            </div>
+        </div>
+        -->
+
+        <div class="col-xs-12" style="padding-bottom:5px">
+            <div class="col-xs-3">
+                <label class="control-label" for="suryo">数量</label>
+            </div>
+            <div class="col-xs-4">
+                <select ng-model="q" ng-options="quantity.name for quantity in quantities" id="suryo" class="form-control">
+                </select>
+            </div>
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-3">
+                <a href="confirmorder.html" class="btn btn-warning pull-right">カートに入れる</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12" style="text-align:center;">
+            <p>ご注文に関するお問い合わせは<br><a href="tel:0123-45-6789">0123-45-6789</a>まで (平日AM8:00～PM5:00)</p>
+            <p/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12" style="text-align:right;">
+            <a href="#">ページトップへ</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
